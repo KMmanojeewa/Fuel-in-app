@@ -1,8 +1,29 @@
 import React, { Fragment } from 'react';
 import {View, Text, Button, StyleSheet} from 'react-native';
 import { Divider, List } from 'react-native-paper';
+import { getCustomerData } from './request';
 
 export default function HomeScreen({navigation}) {
+
+  const [ customer, setCustomer ] = useState([]);
+  const [ cus_id, setCus_id ] = useState('');
+
+  useEffect(() => {
+
+
+    if(cus_id) {
+      getCustomerData().then((data) => {
+        console.log('......vvv.....')
+        console.log(data.customer)
+      });
+    } else {
+      navigation.navigate('Login')
+    }
+    
+
+  }, []);
+
+
   return (<Fragment>
     <View>
     <List.Item

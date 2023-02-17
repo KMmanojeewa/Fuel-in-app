@@ -10,6 +10,8 @@ import HomeScreen from './components/HomeScreen';
 import DetailsScreen from './components/DetailsScreen';
 import VehiclesScreen from './components/VehiclesScreen';
 import FuelScreen from './components/FuelScreen';
+import AddVehicle from './components/AddVehicleScreen';
+import Login from './components/LoginScreen';
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -20,7 +22,9 @@ export default function App() {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Details" component={DetailsScreen} />
         <Stack.Screen name="Vehicles" component={VehiclesScreen} />
+        <Stack.Screen name="AddVehicle" component={AddVehicleScreen} />
         <Stack.Screen name="Fuel" component={FuelScreen} />
+        <Stack.Screen name="Login" component={LoginScreen} />
       </Stack.Navigator>
     </NavigationContainer>
     </PaperProvider>

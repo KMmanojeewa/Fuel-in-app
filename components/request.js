@@ -31,6 +31,30 @@
 //     return await response.json;
 // }
 
+export const getCustomerData = async(id) => {
+    return fetch(`http://192.168.1.4/fuelin/customer/getCustomerData`, {
+
+    method: 'POST',
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({'id':id})
+})
+    .then(res => res.json())
+    .then(
+        (result) => {
+            console.log(result)
+            return result;
+        },
+        (error) => {
+            console.log('error', error);
+            return '';
+        }
+    )
+}
+
+
 export const getVehiclesCall = async(id) => {
 
     // let caller = callAPI('fuel/getVehicles', 'POST', {'id':id});
@@ -57,16 +81,33 @@ export const getVehiclesCall = async(id) => {
             }
         )
 
+}
 
-    // let promise = new Promise(function(resolve, reject){
-    //     caller.then(data => {
-    //         console.log('.....a......')
-    //         console.log(data)
-    //         resolve(data);
-    //     });
-    // });
+export const callLogin = async(data) => {
 
-    // return promise;
+
+
+
+    return fetch(`http://192.168.1.4/fuelin/login/login`, {
+
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+        .then(res => res.json())
+        .then(
+            (result) => {
+                console.log(result)
+                return result;
+            },
+            (error) => {
+                console.log('error', error);
+                return '';
+            }
+        )
 
 }
 

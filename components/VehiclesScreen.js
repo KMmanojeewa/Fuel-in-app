@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {View, Text, Button, StyleSheet} from 'react-native';
 import { getVehiclesCall } from './request';
 import { Divider, List } from 'react-native-paper';
-
+import { Button } from 'react-native-paper';
 
 
 export default function VehiclesScreen() {
@@ -18,6 +18,10 @@ export default function VehiclesScreen() {
     })
 
   }, []);
+
+  const addVehicle = () => {
+    navigation.navigate('AddVehicle')
+  }
 
   return (
     <>
@@ -35,6 +39,12 @@ export default function VehiclesScreen() {
   <Divider />
   </>
       })}
+<Button 
+icon="plus" 
+mode="contained" 
+onPress={() => addVehicle()}>
+    Add Vehicle
+  </Button>
     </>
   );
 }

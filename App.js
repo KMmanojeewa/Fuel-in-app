@@ -8,6 +8,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './components/HomeScreen';
 import DetailsScreen from './components/DetailsScreen';
+import VehiclesScreen from './components/VehiclesScreen';
+import FuelScreen from './components/FuelScreen';
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -17,6 +19,8 @@ export default function App() {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen name="Vehicles" component={VehiclesScreen} />
+        <Stack.Screen name="Fuel" component={FuelScreen} />
       </Stack.Navigator>
     </NavigationContainer>
     </PaperProvider>
